@@ -1,5 +1,5 @@
 {
-  "name": "pluonggr/sdev485/project",
+  "name": "pluonggr/sdev485/sdev485_class_project",
   "authors": [
     {
       "name": "Patrick Luong",
@@ -8,8 +8,5 @@
   ],
   "require": {
     "bcosca/fatfree-core": "dev-master"
-  },
-  "autoload": {
-    "classmap": ["classes/", "model/","controllers/"]
   }
 }
