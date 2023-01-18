@@ -1,0 +1,15 @@
+{
+  "name": "pluonggr/sdev485/project",
+  "authors": [
+    {
+      "name": "Patrick Luong",
+      "email": "luong.patrick@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["classes/", "model/","controllers/"]
+  }
+}
