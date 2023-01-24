@@ -11,8 +11,10 @@ class Student
     private $_spring;
     private $_summer;
 
+    private $_advisor;
+
     public function __construct($token = "", $fall = "", $winter = "",
-                                $spring = "", $summer = "")
+                                $spring = "", $summer = "", $advisor = "")
     {
 
         $this->_token = "";
@@ -20,7 +22,24 @@ class Student
         $this->_winter = "";
         $this->_spring = "";
         $this->_summer = "";
+        $this->_advisor = "";
 
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdvisor(): string
+    {
+        return $this->_advisor;
+    }
+
+    /**
+     * @param string $advisor
+     */
+    public function setAdvisor(string $advisor): void
+    {
+        $this->_advisor = $advisor;
     }
 
     /**

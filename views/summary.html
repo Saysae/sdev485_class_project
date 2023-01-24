@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+</head>
+<body>
+
+  <h1>Summary</h1>
+  <ul class="list-group mb-3">
+    <li class="list-group-item">Fall Quarter: {{ @SESSION.student->getFall() }}</li>
+    <li class="list-group-item">Winter Quarter: {{ @SESSION.student->getWinter() }}</li>
+    <li class="list-group-item">Spring: {{ @SESSION.student->getSpring() }}</li>
+    <li class="list-group-item">Summer: {{ @SESSION.student->getAdvisor() }}</li>
+    <li class="list-group-item">Advisor: {{ @SESSION.student->getEmail() }}</li>
+    <li class="list-group-item">Token: {{ @SESSION.student->getToken() }}</li>
+  </ul>
+
+</body>
+</html>

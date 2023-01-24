@@ -6,9 +6,8 @@ error_reporting(E_ALL);
 //Require the autoload file
 require_once('vendor/autoload.php');
 
-//Create an instance of the Base class
-//:: is used to call a method within the static Base class within fat-free
 $f3 = Base::instance();
+$con = new Controller($f3);
 
 //Define a default route
 $f3->route('GET /', function() {
@@ -20,6 +19,17 @@ $f3->route('GET /', function() {
     echo $view->render('views/home.html');
 }
 );
+
+$f3->route('GET|POST /personal', function ()
+{
+   $GLOBALS['con']->submit();
+});
+
+$f3->route('GET /summary', function ()
+{
+    $view = new Template();
+    echo $view->render('views/summary.html');
+});
 
 //Run fat free
 // -> is invoking the run() method in the fat-free

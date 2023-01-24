@@ -7,21 +7,39 @@
 <body>
 <h1>Form</h1>
   <div class="container">
-    <form method="GET" action="submitted">
-      <div class="row">
+    <form method="POST" action="#">
+
         <div class="col">
           <h1>Planner</h1>
           <hr class="my-4">
-          <label for="fall">Fall Quarter</label><br>
-          <input type="text" name="fall" id="fall"><br>
-          <label for="winter">Winter Quarter</label><br>
-          <input type="text" name="winter" id="winter"><br>
-          <label for="spring">Spring Quarter</label><br>
-          <input type="text" name="spring" id="spring"><br>
-          <label for="summer">Summer Quarter</label><br>
-          <input type="text" name="summer" id="summer"><br>
-          <p>Token</p>
+
+        <div class="form-group">
+          <label for="fall"><strong>Fall</strong></label><br>
+          <textarea class="form-control" rows="10" id="fall" name="fall"></textarea>
         </div>
+
+        <div class="form-group">
+          <label for="winter"><strong>Winter</strong></label><br>
+          <textarea class="form-control" rows="10" id="winter" name="winter"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="spring"><strong>Spring</strong></label><br>
+          <textarea class="form-control" rows="10" id="spring" name="spring"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="summer"><strong>Summer</strong></label><br>
+          <textarea class="form-control" rows="10" id="summer" name="summer"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="advisor"><strong>Advisor</strong></label><br>
+          <input type="text" name="email" class="form-control" id="advisor">
+        </div>
+      </div>
+      <div class="text-center">
+          <a href="summary.html"><button class="btn btn-primary">Submit</button></a>
       </div>
     </form>
   </div>

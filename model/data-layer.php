@@ -21,8 +21,8 @@ class ScheduleData
 
     function saveSchedule($schedule)
     {
-        $sql = "INSERT INTO schedule_class (token, fall, winter, spring, summer) 
-                VALUES (:token, :fall, :winter, :spring, :summer)";
+        $sql = "INSERT INTO SDEV485ClassProject (token, fall, winter, spring, summer) 
+                VALUES (:token, :fall, :winter, :spring, :summer, :advisor)";
 
         $statement = $this->_dbh->prepare($sql);
 
@@ -33,10 +33,11 @@ class ScheduleData
         $summer = $schedule->getSummer();
 
         $statement->bindParam(':token', $token, PDO::PARAM_STR);
-        $statement->bindParam(':token', $fall, PDO::PARAM_STR);
-        $statement->bindParam(':token', $winter, PDO::PARAM_STR);
-        $statement->bindParam(':token', $spring, PDO::PARAM_STR);
-        $statement->bindParam(':token', $summer, PDO::PARAM_STR);
+        $statement->bindParam(':fall', $fall, PDO::PARAM_STR);
+        $statement->bindParam(':winter', $winter, PDO::PARAM_STR);
+        $statement->bindParam(':spring', $spring, PDO::PARAM_STR);
+        $statement->bindParam(':summer', $summer, PDO::PARAM_STR);
+        $statement->bindParam(':advisor', $summer, PDO::PARAM_STR);
 
         $statement->execute();
 
@@ -49,7 +50,7 @@ class ScheduleData
     function viewSchedule()
     {
         //1. Define query
-        $sql = "SELECT * FROM schedule_class";
+        $sql = "SELECT * FROM SDEV485ClassProject";
 
         //2. Prepare statement
         $statement = $this->_dbh->prepare($sql);
