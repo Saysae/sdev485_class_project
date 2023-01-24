@@ -23,13 +23,9 @@ $f3->route('GET /', function() {
 $f3->route('GET|POST /personal', function ()
 {
    $GLOBALS['con']->submit();
+
 });
 
-$f3->route('GET /summary', function ()
-{
-    $view = new Template();
-    echo $view->render('views/summary.html');
-});
 
 //Run fat free
 // -> is invoking the run() method in the fat-free
