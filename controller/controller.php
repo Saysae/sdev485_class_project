@@ -20,42 +20,72 @@ class ControllerSchedule
         //if the form has been submitted
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
-            var_dump( ($_POST));
-
-            $schedule = $_POST['schedule'];
-
-            //create a new Student object
-            $student = new Student();
-
-            $advisor= $_POST['advisor'];
-            $student->setAdvisor($schedule);
-            $this->_f3->set('studentAdvisor', $schedule);
-
-            $fall = $_POST['fall'];
-            $student->setFall($schedule);
-            $this->_f3->set('studentFall', $schedule);
-
-            $winter = $_POST['winter'];
-            $student->setWinter($schedule);
-            $this->_f3->set("studentFall", $schedule);
-
-            $spring = $_POST['spring'];
-            $student->setSpring($schedule);
-            $this->_f3->set("studentSpring", $schedule);
-
-
             $allowed_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
             $result_token = "";
             for ($i = 0; $i < 6; $i++)
             {
-            $picked = rand(0, strlen($allowed_chars) - 1);
-            $result_token = $result_token . $allowed_chars[$picked];
+                $picked = rand(0, strlen($allowed_chars) - 1);
+                $result_token = $result_token . $allowed_chars[$picked];
             }
 
-            $student->setToken($result_token);
-            $this->_f3->set('studentToken', $schedule);
+            $advisor= $_POST['advisor'];
+            $fall = $_POST['fall'];
+            $winter = $_POST['winter'];
+            $spring = $_POST['spring'];
+            $summer = $_POST['summer'];
 
-            $_SESSION['schedule'] = $schedule;
+            $this->_f3->set('advisor', $advisor);
+            $this->_f3->set('fall', $fall);
+            $this->_f3->set('winter', $fall);
+            $this->_f3->set('spring', $fall);
+            $this->_f3->set('summer', $summer);
+
+/*
+            $advisor = "";
+            $fall = "";
+            $winter = "";
+            $spring = "";
+            $summer = "";
+
+            if(isset($_POST['advisor']))
+            {
+                $advisor = $_POST['advisor'];
+            }
+            if(isset($_POST['fall']))
+            {
+                $fall = $_POST['fall'];
+            }
+            if(isset($_POST['winter']))
+            {
+                $winter = $_POST['winter'];
+            }
+            if(isset($_POST['spring']))
+            {
+                $spring = $_POST['spring'];
+            }
+            if(isset($_POST['summer']))
+            {
+                $summer = $_POST['summer'];
+            }
+*/
+
+            $student = new Student();
+            $_SESSION['student'] = $student;
+/*          $student->setAdvisor($advisor);
+            $student->setFall($fall);
+            $student->setWinter($winter);
+            $student->setSpring($spring);
+            $student->setSummer($summer);
+            $student->setToken($result_token);
+*/
+
+            $_SESSION['student']->setAdvisor($advisor);
+            $_SESSION['student']->setFall($fall);
+            $_SESSION['student']->setWinter($winter);
+            $_SESSION['student']->setSpring($spring);
+            $_SESSION['student']->setSummer($summer);
+            $_SESSION['student']->setToken($result_token);
+
 
             $view = new Template();
             echo $view->render('views/form.html');
