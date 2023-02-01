@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require_once('vendor/autoload.php');
 
 $f3 = Base::instance();
-$con = new Controller($f3);
+$con = new ControllerSchedule($f3);
 
 //Define a default route
 $f3->route('GET /', function() {
@@ -15,21 +15,11 @@ $f3->route('GET /', function() {
 
     // create a new view object, a new template, template is a fat-free function
     //and renders the view page
-    $view = new Template();
-    echo $view->render('views/home.html');
-}
-);
-
-$f3->route('GET|POST /personal', function ()
-{
-   $GLOBALS['con']->submit();
-
+    $GLOBALS['con']->home();
 });
 
 $f3->route('GET|POST /summary', function() {
-    var_dump($_SESSION['student']);
-    $view = new Template();
-    echo $view->render('views/summary.html');
+    $GLOBALS['con']->summary();
 });
 
 //Run fat free

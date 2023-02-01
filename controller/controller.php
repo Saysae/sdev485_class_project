@@ -1,6 +1,6 @@
 <?php
 
-class Controller
+class ControllerSchedule
 {
     private $_f3;
 
@@ -9,14 +9,17 @@ class Controller
         $this->_f3 = $f3;
     }
 
+    function home()
+    {
+        $view = new Template();
+        echo $view->render('views/home.html');
+    }
     function submit()
     {
 
         //if the form has been submitted
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
-
-
             var_dump( ($_POST));
 
             $schedule = $_POST['schedule'];
@@ -59,4 +62,13 @@ class Controller
 
         }
     }
+
+    function summary()
+    {
+        var_dump($_SESSION['schedule']);
+        $view = new Template();
+        echo $view->render('views/summary.html');
+    }
+
+
 }

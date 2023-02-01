@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Green River Class Scheduler</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
@@ -19,27 +20,31 @@
 <hr class="my-4">
 <h1>Schedule Planner</h1>
   <div class="container">
-    <form method="POST" action="summary">
+    <form method="POST" action="summary.html">
         <div class="col">
         <hr class="my-4">
         <div class="form-group">
+            <label for="year"><strong>Year 2023</strong></label><br>
+            <textarea class="form-control" rows="5" id="year" name="year"></textarea>
+        </div>
+        <div class="form-group">
           <label for="fall"><strong>Fall</strong></label><br>
-          <textarea class="form-control" rows="10" id="fall" name="fall"></textarea>
+          <textarea class="form-control" rows="5" id="fall" name="fall"></textarea>
         </div>
 
         <div class="form-group">
           <label for="winter"><strong>Winter</strong></label><br>
-          <textarea class="form-control" rows="10" id="winter" name="winter"></textarea>
+          <textarea class="form-control" rows="5" id="winter" name="winter"></textarea>
         </div>
 
         <div class="form-group">
           <label for="spring"><strong>Spring</strong></label><br>
-          <textarea class="form-control" rows="10" id="spring" name="spring"></textarea>
+          <textarea class="form-control" rows="5" id="spring" name="spring"></textarea>
         </div>
 
         <div class="form-group">
           <label for="summer"><strong>Summer</strong></label><br>
-          <textarea class="form-control" rows="10" id="summer" name="summer"></textarea>
+          <textarea class="form-control" rows="5" id="summer" name="summer"></textarea>
         </div>
 
         <div class="form-group">
@@ -47,11 +52,21 @@
           <input type="text" name="email" class="form-control" id="advisor">
         </div>
       </div>
+
+        <div class="text-center">
+            <button onclick="generate()" type="button">Next Year</button>
+            <div class="container" id="nextYear">
+
+            </div>
+        </div>
+
+
       <div class="text-center">
-          <a href="summary.html"><button class="btn btn-primary">Submit</button></a>
+          <a href="summary.html"><button class="btn btn-primary" >Submit</button></a>
       </div>
     </form>
   </div>
+<script src="../scripts.js"></script>
 <script src="//code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 
