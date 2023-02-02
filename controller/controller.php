@@ -95,7 +95,6 @@ i*/
     function summary()
     {
         var_dump($_SESSION['student']);
-        console.log($_SESSION['student']);
         $view = new Template();
         echo $view->render('views/summary.html');
     }
