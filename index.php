@@ -18,6 +18,10 @@ $f3->route('GET /', function() {
     $GLOBALS['con']->home();
 });
 
+$f3->route('GET|POST /form', function() {
+    $GLOBALS['con']->form();
+});
+
 $f3->route('GET|POST /summary', function() {
     $GLOBALS['con']->summary();
 });

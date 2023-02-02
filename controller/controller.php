@@ -14,9 +14,8 @@ class ControllerSchedule
         $view = new Template();
         echo $view->render('views/home.html');
     }
-    function submit()
+    function form()
     {
-
         //if the form has been submitted
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
@@ -77,7 +76,7 @@ class ControllerSchedule
             $student->setSpring($spring);
             $student->setSummer($summer);
             $student->setToken($result_token);
-*/
+i*/
 
             $_SESSION['student']->setAdvisor($advisor);
             $_SESSION['student']->setFall($fall);
@@ -95,7 +94,8 @@ class ControllerSchedule
 
     function summary()
     {
-        var_dump($_SESSION['schedule']);
+        var_dump($_SESSION['student']);
+        console.log($_SESSION['student']);
         $view = new Template();
         echo $view->render('views/summary.html');
     }
