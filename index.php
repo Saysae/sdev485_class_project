@@ -5,7 +5,7 @@ ini_set('display_error', 1);
 error_reporting(E_ALL);
 //Require the autoload file
 require_once('vendor/autoload.php');
-
+session_start();
 $f3 = Base::instance();
 $con = new ControllerSchedule($f3);
 

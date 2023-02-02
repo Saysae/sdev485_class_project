@@ -29,5 +29,4 @@ function generate()
         "          <textarea class=\"form-control\" rows=\"5\" id=\"summer\" name=\"summer\"></textarea>\n" +
         "        </div>";
 
-    return false;
 }

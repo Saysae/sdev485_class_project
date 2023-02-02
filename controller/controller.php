@@ -16,7 +16,7 @@ class ControllerSchedule
     }
     function form()
     {
-        //if the form has been submitted
+/*        //if the form has been submitted
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
             $allowed_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -39,7 +39,7 @@ class ControllerSchedule
             $this->_f3->set('spring', $fall);
             $this->_f3->set('summer', $summer);
 
-/*
+
             $advisor = "";
             $fall = "";
             $winter = "";
@@ -66,17 +66,17 @@ class ControllerSchedule
             {
                 $summer = $_POST['summer'];
             }
-*/
+
 
             $student = new Student();
             $_SESSION['student'] = $student;
-/*          $student->setAdvisor($advisor);
+          $student->setAdvisor($advisor);
             $student->setFall($fall);
             $student->setWinter($winter);
             $student->setSpring($spring);
             $student->setSummer($summer);
             $student->setToken($result_token);
-i*/
+
 
             $_SESSION['student']->setAdvisor($advisor);
             $_SESSION['student']->setFall($fall);
@@ -86,10 +86,10 @@ i*/
             $_SESSION['student']->setToken($result_token);
 
 
-            $view = new Template();
-            echo $view->render('views/form.html');
+        }*/
 
-        }
+        $view = new Template();
+        echo $view->render('views/form.html');
     }
 
     function summary()
